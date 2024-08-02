@@ -126,7 +126,7 @@ Class.genericTank = {
     TURRETS: [],
     PROPS: [],
     ON: [],
-    ARENA_CLOSER: false, // don't remove this, it stops dev basics going through walls
+    IGNORE_COLLISION: false, // don't remove this, it stops dev basics going through walls
     GIVE_KILL_MESSAGE: true,
     DRAW_HEALTH: true,
     RESET_EVENTS: true,
@@ -140,12 +140,15 @@ Class.genericSmasher = {
     STAT_NAMES: statnames.smasher,
     BODY: {
         FOV: 1.05 * base.FOV,
-        DENSITY: 2 * base.DENSITY
+        DENSITY: 2 * base.DENSITY,
+        HEALTH: base.HEALTH * 2,
+      SHIELD: base.SHIELD * 1.5,
+      REGEN: base.REGEN * 1.25,
     }
 }
 Class.genericBoss = {
     PARENT: "genericTank",
-    TYPE: "miniboss",
+  TYPE: "miniboss",
     DANGER: 6,
     SKILL: skillSet({
         rld: 0.7,

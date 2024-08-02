@@ -767,13 +767,15 @@ exports.makeCrasher = type => ({
 
 exports.makeRare = (type, level) => {
     type = ensureIsClass(type);
+    let usableSHAPE = Math.max(type.SHAPE, 3),
+        downscale = Math.cos(Math.PI / usableSHAPE);
     return {
         PARENT: "food",
-        LABEL: ["Shiny", "Legendary", "Shadow", "Rainbow", "Trans"][level] + " " + type.LABEL,
+        LABEL: ["Shiny", "Legendary", "Shadow", "Rainbow", "Abyssal"][level] + " " + type.LABEL,
         VALUE: [100, 500, 2000, 4000, 5000][level] * type.VALUE,
         SHAPE: type.SHAPE,
         SIZE: type.SIZE + level,
-        COLOR: ["lightGreen", "teal", "darkGrey", "rainbow", "trans"][level],
+        COLOR: ["lightGreen", "teal", "darkGrey", "rainbow", "pureBlack"][level],
         ALPHA: level == 2 ? 0.25 : 1,
         BODY: {
             DAMAGE: type.BODY.DAMAGE + level,
@@ -785,6 +787,10 @@ exports.makeRare = (type, level) => {
         DRAW_HEALTH: true,
         INTANGIBLE: false,
         GIVE_KILL_MESSAGE: true,
+        PROPS: Array(level).fill().map((_, i) => ({
+            POSITION: [20 * downscale ** (i + 1), 0, 0, !(i & 1) ? 180 / usableSHAPE : 0, 1],
+            TYPE: [type, { COLOR: 'mirror' }]
+        }))
     }
 }
 

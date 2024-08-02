@@ -460,7 +460,7 @@ function incoming(message, socket) {
             for (let i = 0; i < entities.length; i++) {
                 let entry = entities[i];
                 if (entry.type === "miniboss") possible.push(entry);
-                if (entry.isDominator || entry.isMothership || entry.isArenaCloser) possible.push(entry);
+                if (entry.isDominator || entry.isMothership || entry.ignoreCollision) possible.push(entry);
                 if (Config.MODE === "tdm" && socket.rememberedTeam === entry.team && entry.type === "tank" && entry.bond == null) possible.push(entry);
             }
             if (!possible.length) {

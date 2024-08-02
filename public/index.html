@@ -17,6 +17,7 @@
     <meta name="theme-color" content="#8abc3f">
 </head>
 <body oncontextmenu="return false" id="mainBody">
+          <div class="scroll-container">
     <div id="gameAreaWrapper">
         <canvas id="gameCanvas" tabindex="1"></canvas>
         <input id="chatInput" type="text" maxlength="256" hidden=true>
@@ -25,7 +26,7 @@
         <div id="startMenuWrapper">
             <div id="startMenu">
                 <div class="startMenuHolder linkHolder">
-                  <center>Weclcome to The Prophecy Paradox.<br><br>This server has many things to offer for the player, such as.<br>-Legendary Classes<br>-Mythical Classes Classes<br>Boss fights<br><br> this server may even add some never before seen feature. Such as a built in Factory builder, or BOMBS</center>
+                  <center>Weclcome to The Prophecy Paradox.<br><br>This server has many things to offer for the player, such as.<br>-Legendary Classes<br>-Mythical Classes Classes<br>Boss fights<br><br> this server may even add some never before seen feature. Such as a built in Factory builder, and music!<br><br>this server may even add some never before seen feature. Such as a built in Factory builder, and music!</center>
                 </div>
                 <div class="startMenuHolder">
                     <div class="sliderHolder">
@@ -109,15 +110,16 @@
                                     <td><div><label class="container"><input id="seperatedHealthbars" tabindex="-1" class="checkbox" type="checkbox"><span class="checkmark"></span> Seperated Health Bars</label></div></td>
                                 </tr>
                                 <tr>
-                                    <td><div><label class="container"><input id="autoLevelUp"         tabindex="-1" class="checkbox" type="checkbox"><span class="checkmark"></span> Auto-Level Up</label></div></td>
-                                    <td><div><label class="container"><input id="centerTank"          tabindex="-1" class="checkbox" type="checkbox"><span class="checkmark"></span> Center Camera</label></div></td>
+                                    <td><div><label class="container"><input id="autoLevelUp"         tabindex="-1"class="checkbox" type="checkbox"><span class="checkmark"></span> Auto-Level Up</label></div></td>
+                                    <td><div><label class="container"><input id="centerTank"          tabindex="-1"class="checkbox" type="checkbox"><span class="checkmark"></span> Center Camera</label></div></td>
                                 </tr>
                             </table>
-                        </div>
+                       </div>
                     </div>
                     <div style="position: relative; bottom: -10px;">
                         <button id="startButton" tabindex="2"><b>Play</b></button>
                     </div>
+                  
                 </div>
                 <div class="startMenuHolder shrinkable">
                     <span class="titleSpan">Changelog</span>
@@ -130,12 +132,14 @@
                         <a class="link discord"   href="https://discord.gg/arras">Arras.io Discord</a>
                         -->
                         <a class="link discord"   href="https://discord.gg/cd36pcXfZt">Discord Server</a>
-                        <a class="link reddit" href="https://arras.cx/#host=ranars-prophecy.glitch.me">Ranar's Prophecy</a>
-                        <a class="link reddit" href="https://arras.cx/#host=ranars-arena.glitch.me">Ranar's Arena</a>
+                        <a class="link server" href="https://arras.cx/#host=ranars-prophecy.glitch.me">Ranar's Prophecy</a>
+                        <a class="link server" href="https://arras.cx/#host=ranars-arena.glitch.me">Ranar's Arena</a>
                     </div>
                 </div>
             </div>
         </div>
+        </div>
+
     </div>
     <!-- JS -->
     <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
@@ -159,6 +163,7 @@
         });
         if (navigator.serviceWorker) navigator.serviceWorker.register('/service-worker.js', { scope: '/' }).then(registration => console.log('Service Worker Registered'));
     </script>
+                  
 </body>
 
 </html>

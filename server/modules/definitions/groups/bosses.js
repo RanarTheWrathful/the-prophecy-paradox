@@ -5,11 +5,13 @@ require('./generics.js');
 
 Class.miniboss = {
     PARENT: "genericBoss",
+  FACTION_TYPE: "Neutral Alliance",
     CONTROLLERS: ["nearestDifferentMaster", "minion", "canRepel"],
     AI: { NO_LEAD: true },
 }
 Class.ramMiniboss = {
     PARENT: "genericBoss",
+  FACTION_TYPE: "Neutral Alliance",
     CONTROLLERS: ["nearestDifferentMaster", "canRepel", "mapTargetToGoal"],
 }
 
@@ -25,7 +27,7 @@ Class.elite = {
         FOV: 1.25,
         SPEED: 0.1 * base.SPEED,
         HEALTH: 7 * base.HEALTH,
-        DAMAGE: 2.5 * base.DAMAGE,
+        DAMAGE: base.DAMAGE,
     },
 }
 Class.eliteDestroyer = {
@@ -556,8 +558,8 @@ Class.sorcerer = {
     BODY: {
         FOV: 0.5,
         SPEED: 0.12 * base.SPEED,
-        HEALTH: 6 * base.HEALTH,
-        DAMAGE: 2 * base.DAMAGE,
+        HEALTH: 3 * base.HEALTH,
+        DAMAGE: base.DAMAGE,
     },
     GUNS: weaponArray({
         POSITION: [3.5, 8.65, 1.2, 8, 0, 0, 0],
@@ -584,8 +586,8 @@ Class.summoner = {
     BODY: {
         FOV: 0.5,
         SPEED: 0.1 * base.SPEED,
-        HEALTH: 7 * base.HEALTH,
-        DAMAGE: 2.6 * base.DAMAGE,
+        HEALTH: 5 * base.HEALTH,
+        DAMAGE: 1.25 * base.DAMAGE,
     },
     GUNS: weaponArray({
         POSITION: [3.5, 8.65, 1.2, 8, 0, 0, 0],
@@ -612,8 +614,8 @@ Class.enchantress = {
     BODY: {
         FOV: 0.5,
         SPEED: 0.09 * base.SPEED,
-        HEALTH: 10 * base.HEALTH,
-        DAMAGE: 3 * base.DAMAGE,
+        HEALTH: 7.5 * base.HEALTH,
+        DAMAGE: 1.5 * base.DAMAGE,
     },
     GUNS: weaponArray({
         POSITION: [3.5, 8.65, 1.2, 8, 0, 0, 0],
@@ -640,8 +642,8 @@ Class.exorcistor = {
     BODY: {
         FOV: 0.5,
         SPEED: 0.08 * base.SPEED,
-        HEALTH: 15 * base.HEALTH,
-        DAMAGE: 4 * base.DAMAGE,
+        HEALTH: 10 * base.HEALTH,
+        DAMAGE: 2 * base.DAMAGE,
     },
     GUNS: weaponArray({
         POSITION: [3.5, 8.65, 1.2, 8, 0, 0, 0],
@@ -669,7 +671,7 @@ Class.shaman = {
         FOV: 0.5,
         SPEED: 0.07 * base.SPEED,
         HEALTH: 20 * base.HEALTH,
-        DAMAGE: 5 * base.DAMAGE,
+        DAMAGE: 3 * base.DAMAGE,
     },
     GUNS: weaponArray({
         POSITION: [3.5, 8.65, 1.2, 8, 0, 0, 0],
@@ -706,9 +708,9 @@ Class.nestKeeper = {
         FOV: 1.3,
         SPEED: base.SPEED * 0.25,
         HEALTH: base.HEALTH * 9,
-        SHIELD: base.SHIELD * 1.5,
+        SHIELD: base.SHIELD * 1.25,
         REGEN: base.REGEN,
-        DAMAGE: base.DAMAGE * 2.5,
+        DAMAGE: base.DAMAGE * 2,
     },
     MAX_CHILDREN: 15,
     VALUE: 3e5,
@@ -744,9 +746,9 @@ Class.nestWarden = {
         FOV: 1.3,
         SPEED: base.SPEED * 0.25,
         HEALTH: base.HEALTH * 9,
-        SHIELD: base.SHIELD * 1.5,
+        SHIELD: base.SHIELD * 1.25,
         REGEN: base.REGEN,
-        DAMAGE: base.DAMAGE * 2.5,
+        DAMAGE: base.DAMAGE * 2,
     },
     VALUE: 3e5,
     GUNS: weaponArray([
@@ -783,9 +785,9 @@ Class.nestGuardian = {
         FOV: 1.3,
         SPEED: base.SPEED * 0.25,
         HEALTH: base.HEALTH * 9,
-        SHIELD: base.SHIELD * 1.5,
+        SHIELD: base.SHIELD * 1.25,
         REGEN: base.REGEN,
-        DAMAGE: base.DAMAGE * 2.5,
+        DAMAGE: base.DAMAGE * 2,
     },
     VALUE: 3e5,
     GUNS: weaponArray({
@@ -821,8 +823,8 @@ Class.roguePalisade = {
     BODY: {
         FOV: 1.4,
         SPEED: 0.05 * base.SPEED,
-        HEALTH: 16 * base.HEALTH,
-        SHIELD: 3 * base.SHIELD,
+        HEALTH: 15 * base.HEALTH,
+        SHIELD: 2 * base.SHIELD,
         DAMAGE: 3 * base.DAMAGE,
     },
     GUNS: weaponArray({
@@ -853,8 +855,8 @@ Class.rogueArmada = {
     BODY: {
         FOV: 1.3,
         SPEED: base.SPEED * 0.1,
-        HEALTH: base.HEALTH * 16,
-        SHIELD: base.SHIELD * 3,
+        HEALTH: base.HEALTH * 15,
+        SHIELD: base.SHIELD * 2,
         REGEN: base.REGEN,
         DAMAGE: base.DAMAGE * 3,
     },
@@ -936,7 +938,7 @@ Class.bob = {
         SPEED: 2 * base.SPEED,
         HEALTH: 5 * base.HEALTH,
         DAMAGE: 5 * base.DAMAGE,
-        REGEN: 8 * base.REGEN,
+        REGEN: 5 * base.REGEN,
         FOV: 0.5 * base.FOV,
         DENSITY: 6 * base.DENSITY,
     },
@@ -963,7 +965,7 @@ Class.nemesis = {
         REGEN: 1e5,
         HEALTH: 1e6,
         DENSITY: 30,
-        DAMAGE: 1e5,
+        DAMAGE: 50,
         FOV: 5,
     },
 };

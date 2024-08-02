@@ -1052,7 +1052,10 @@ class Entity extends EventEmitter {
         if (set.BUFF_VS_FOOD != null) this.settings.buffVsFood = set.BUFF_VS_FOOD;
         if (set.CAN_BE_ON_LEADERBOARD != null) this.settings.leaderboardable = set.CAN_BE_ON_LEADERBOARD;
         if (set.INTANGIBLE != null) this.intangibility = set.INTANGIBLE;
-        if (set.IS_SMASHER != null) this.settings.reloadToAcceleration = set.IS_SMASHER;
+        if (set.IS_SMASHER != null) {
+          this.settings.reloadToAcceleration = set.IS_SMASHER;
+          this.isSmasher = set.IS_SMASHER;
+          }
         if (set.STAT_NAMES != null) this.settings.skillNames = {
             body_damage: set.STAT_NAMES?.BODY_DAMAGE ?? 'Body Damage',
             max_health: set.STAT_NAMES?.MAX_HEALTH ?? 'Max Health',
@@ -1105,12 +1108,12 @@ class Entity extends EventEmitter {
             this.skill.setCaps(Array(10).fill(0));
             this.skill.setCaps(caps);
             this.upgrades = [];
-            this.isArenaCloser = false;
+            this.ignoreCollision = false;
             this.alpha = 1;
             this.reset();
         }
         if (set.RESET_UPGRADE_MENU) this.upgrades = []
-        if (set.ARENA_CLOSER != null) this.isArenaCloser = set.ARENA_CLOSER;
+        if (set.IGNORE_COLLISION != null) this.ignoreCollision = set.IGNORE_COLLISION;
         if (set.BRANCH_LABEL != null) this.branchLabel = set.BRANCH_LABEL;
         if (set.BATCH_UPGRADES != null) this.batchUpgrades = set.BATCH_UPGRADES;
         for (let i = 0; i < Config.MAX_UPGRADE_TIER; i++) {
@@ -1687,7 +1690,7 @@ class Entity extends EventEmitter {
             this.emit("upgrade", { body: this });
             if (this.color.base == '-1' || this.color.base == 'mirror') {
                 if (Config.GROUPS || (Config.MODE == 'ffa' && !Config.TAG)) {
-                    this.color.base = this.isBot ? "darkGrey" : getTeamColor(TEAM_RED);
+                    this.color.base = this.isBot ? "red" : getTeamColor(TEAM_RED);
                 } else {
                     this.color.base = getTeamColor(this.team);
                 }

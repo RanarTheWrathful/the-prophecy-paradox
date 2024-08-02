@@ -24,7 +24,7 @@ Class.developer = {
     CAN_GO_OUTSIDE_ROOM: false,
     IS_IMMUNE_TO_TILES: false,
     DRAW_HEALTH: true,
-    ARENA_CLOSER: true,
+    IGNORE_COLLISION: true,
     INVISIBLE: [0, 0],
     ALPHA: [0, 1],
     HITS_OWN_TYPE: "hardOnlyTanks",
@@ -58,7 +58,7 @@ Class.spectator = {
     DRAW_HEALTH: false,
     HITS_OWN_TYPE: "never",
     IGNORED_BY_AI: true,
-    ARENA_CLOSER: true,
+    IGNORE_COLLISION: true,
     IS_IMMUNE_TO_TILES: true,
     TOOLTIP: "Left click to teleport, Right click above or below the screen to change FOV",
     SKILL_CAP: [0, 0, 0, 0, 0, 0, 0, 0, 0, 255],
@@ -108,7 +108,7 @@ Class.generatorBase = {
     ACCEPTS_SCORE: false,
     DRAW_HEALTH: false,
     HITS_OWN_TYPE: "never",
-    ARENA_CLOSER: true,
+    IGNORE_COLLISION: true,
     IS_IMMUNE_TO_TILES: true,
     SKILL_CAP: [31, 0, 0, 0, 0, 0, 0, 0, 0, 31],
     BODY: {
@@ -223,12 +223,12 @@ function connectMatrix(matrix, matrix2Entrance) {
 }
 let generatorMatrix = [
     [ "egg"           , "gem"                , "jewel"                  , "crasher"             , "sentry"               , "shinySentry"        , "EggRelic"           , "sphere"       ],
-    [ "square"        , "shinySquare"        , "legendarySquare"        , "shadowSquare"        , "rainbowSquare"        , "transSquare"        , "SquareRelic"        , "cube"         ],
-    [ "triangle"      , "shinyTriangle"      , "legendaryTriangle"      , "shadowTriangle"      , "rainbowTriangle"      , "transTriangle"      , "TriangleRelic"      , "tetrahedron"  ],
-    [ "pentagon"      , "shinyPentagon"      , "legendaryPentagon"      , "shadowPentagon"      , "rainbowPentagon"      , "transPentagon"      , "PentagonRelic"      , "octahedron"   ],
-    [ "betaPentagon"  , "shinyBetaPentagon"  , "legendaryBetaPentagon"  , "shadowBetaPentagon"  , "rainbowBetaPentagon"  , "transBetaPentagon"  , "BetaPentagonRelic"  , "dodecahedron" ],
-    [ "alphaPentagon" , "shinyAlphaPentagon" , "legendaryAlphaPentagon" , "shadowAlphaPentagon" , "rainbowAlphaPentagon" , "transAlphaPentagon" , "AlphaPentagonRelic" , "icosahedron"  ],
-    [ "hexagon"       , "shinyHexagon"       , "legendaryHexagon"       , "shadowHexagon"       , "rainbowHexagon"       , "transHexagon"       , "HexagonRelic"       , "tesseract"    ],
+    [ "square"        , "shinySquare"        , "legendarySquare"        , "shadowSquare"        , "rainbowSquare"        , "abyssalSquare"        , "SquareRelic"        , "cube"         ],
+    [ "triangle"      , "shinyTriangle"      , "legendaryTriangle"      , "shadowTriangle"      , "rainbowTriangle"      , "abyssalTriangle"      , "TriangleRelic"      , "tetrahedron"  ],
+    [ "pentagon"      , "shinyPentagon"      , "legendaryPentagon"      , "shadowPentagon"      , "rainbowPentagon"      , "abyssalPentagon"      , "PentagonRelic"      , "octahedron"   ],
+    [ "betaPentagon"  , "shinyBetaPentagon"  , "legendaryBetaPentagon"  , "shadowBetaPentagon"  , "rainbowBetaPentagon"  , "abyssalBetaPentagon"  , "BetaPentagonRelic"  , "dodecahedron" ],
+    [ "alphaPentagon" , "shinyAlphaPentagon" , "legendaryAlphaPentagon" , "shadowAlphaPentagon" , "rainbowAlphaPentagon" , "abyssalAlphaPentagon" , "AlphaPentagonRelic" , "icosahedron"  ],
+    [ "hexagon"       , "shinyHexagon"       , "legendaryHexagon"       , "shadowHexagon"       , "rainbowHexagon"       , "abyssalHexagon"       , "HexagonRelic"       , "tesseract"    ],
 ],
 gemRelicMatrix = [];
 for (let tier of [ "", "Egg", "Square", "Triangle", "Pentagon", "BetaPentagon", "AlphaPentagon", "Hexagon" ]) {

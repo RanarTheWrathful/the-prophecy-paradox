@@ -305,7 +305,7 @@ function mooncollide(moon, n) {
 }
 
 function mazewallcollide(wall, bounce) {
-    if (bounce.god === true || bounce.passive === true || bounce.isArenaCloser || bounce.master.isArenaCloser) return;
+    if (bounce.god === true || bounce.passive === true || bounce.ignoreCollision || bounce.master.isArenaCloser) return;
     if (bounce.store.noWallCollision) return;
     if (bounce.team === wall.team && bounce.type === "tank") return;
     let trueWallSize = wall.size * lazyRealSizes[4] / Math.SQRT2 + 2;

@@ -673,14 +673,14 @@ Class.arenaCloser = {
         REGEN: 1e5,
         HEALTH: 1e6,
         DENSITY: 30,
-        DAMAGE: 1e5,
+        DAMAGE: 50,
         FOV: 10,
         SPEED: 8,
     },
     SKILL: skillSet({ rld: 1, dam: 1, pen: 1, str: 1, spd: 1, atk: 1, hlt: 1, shi: 1, rgn: 1, mob: 1 }),
     DRAW_HEALTH: false,
     HITS_OWN_TYPE: "never",
-    ARENA_CLOSER: true,
+    IGNORE_COLLISION: true,
     IS_IMMUNE_TO_TILES: true,
     GUNS: [{
         POSITION: [14, 10, 1, 0, 0, 0, 0],
@@ -771,7 +771,7 @@ Class.tracker3 = {
 // BOTS
 Class.bot = {
     FACING_TYPE: "looseToTarget",
-    CONTROLLERS: ["nearestDifferentMaster", "mapAltToFire", "minion", "fleeAtLowHealth", ["mapFireToAlt", { onlyIfHasAltFireGun: true }], ["wanderAroundMap", { immitatePlayerMovement: true, lookAtGoal: true }]],
+    CONTROLLERS: ["nearestDifferentMaster", "mapAltToFire", "fleeAtLowHealth", ["mapFireToAlt", { onlyIfHasAltFireGun: true }], ["wanderAroundMap", { immitatePlayerMovement: true, lookAtGoal: true }]],
 };
 
 // SCORE KEEPING

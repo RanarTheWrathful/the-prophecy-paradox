@@ -448,7 +448,7 @@ class io_nearestDifferentMaster extends IO {
         (e.master.master.team !== TEAM_ROOM) &&
         (!isNaN(e.dangerValue)) &&
         (!e.invuln && !e.master.master.passive && !this.body.master.master.passive) &&
-        (this.body.aiSettings.seeInvisible || this.body.isArenaCloser || e.alpha > 0.5) &&
+        (this.body.aiSettings.seeInvisible || this.body.ignoreCollision || e.alpha > 0.5) &&
         (!e.bond) &&
         (e.type === "miniboss" || e.type === "tank" || e.type === "crasher" || (!this.body.aiSettings.IGNORE_SHAPES && e.type === 'food')) &&
         (this.body.aiSettings.BLIND || ((e.x - m.x) * (e.x - m.x) < sqrRange && (e.y - m.y) * (e.y - m.y) < sqrRange)) &&

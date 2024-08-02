@@ -21,7 +21,7 @@ bossSpawn = new Tile({
     /*tick: tile => {
         for (let i = 0; i < tile.entities.length; i++) {
             let entity = tile.entities[i];
-            if (!entity.isBoss && !entity.isArenaCloser) entity.kill();
+            if (!entity.isBoss && !entity.ignoreCollision) entity.kill();
         }
     }*/
     tick: tile => {
