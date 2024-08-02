@@ -523,6 +523,7 @@ function parseTheme(string) {
 }
 // This starts the game and sets up the websocket
 function startGame() {
+      
     // Set flag
     global.gameLoading = true;
     console.log('Started connecting.');

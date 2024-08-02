@@ -241,7 +241,7 @@ for (let k in Class) {
         util.error('[WARNING] An error has occured during mockup loading:');
         util.error('When attempting to generate mockup "' + k + '":');
         for (let i in Class[k]) util.error("\t" + i + ": " + Class[k][i]);
-        throw error;
+throw error;
     }
 }
 

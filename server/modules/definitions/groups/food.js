@@ -63,7 +63,7 @@ Class.shinyEgg = makeRare("egg", 0);
 Class.legendaryEgg = makeRare("egg", 1);
 Class.shadowEgg = makeRare("egg", 2);
 Class.rainbowEgg = makeRare("egg", 3);
-Class.transEgg = makeRare("egg", 4); //ironic
+Class.abyssalEgg = makeRare("egg", 4); //ironic
 
 // SQUARES
 Class.square = {
@@ -87,7 +87,7 @@ Class.shinySquare = makeRare("square", 0);
 Class.legendarySquare = makeRare("square", 1);
 Class.shadowSquare = makeRare("square", 2);
 Class.rainbowSquare = makeRare("square", 3);
-Class.transSquare = makeRare("square", 4);
+Class.abyssalSquare = makeRare("square", 4);
 
 // TRIANGLES
 Class.triangle = {
@@ -111,7 +111,7 @@ Class.shinyTriangle = makeRare("triangle", 0);
 Class.legendaryTriangle = makeRare("triangle", 1);
 Class.shadowTriangle = makeRare("triangle", 2);
 Class.rainbowTriangle = makeRare("triangle", 3);
-Class.transTriangle = makeRare("triangle", 4);
+Class.abyssalTriangle = makeRare("triangle", 4);
 
 // PENTAGONS
 Class.pentagon = {
@@ -135,7 +135,7 @@ Class.shinyPentagon = makeRare("pentagon", 0);
 Class.legendaryPentagon = makeRare("pentagon", 1);
 Class.shadowPentagon = makeRare("pentagon", 2);
 Class.rainbowPentagon = makeRare("pentagon", 3);
-Class.transPentagon = makeRare("pentagon", 4);
+Class.abyssalPentagon = makeRare("pentagon", 4);
 
 // BETA PENTAGONS
 Class.betaPentagon = {
@@ -161,7 +161,7 @@ Class.shinyBetaPentagon = makeRare("betaPentagon", 0);
 Class.legendaryBetaPentagon = makeRare("betaPentagon", 1);
 Class.shadowBetaPentagon = makeRare("betaPentagon", 2);
 Class.rainbowBetaPentagon = makeRare("betaPentagon", 3);
-Class.transBetaPentagon = makeRare("betaPentagon", 4);
+Class.abyssalBetaPentagon = makeRare("betaPentagon", 4);
 
 // ALPHA PENTAGONS
 Class.alphaPentagon = {
@@ -187,7 +187,7 @@ Class.shinyAlphaPentagon = makeRare("alphaPentagon", 0);
 Class.legendaryAlphaPentagon = makeRare("alphaPentagon", 1);
 Class.shadowAlphaPentagon = makeRare("alphaPentagon", 2);
 Class.rainbowAlphaPentagon = makeRare("alphaPentagon", 3);
-Class.transAlphaPentagon = makeRare("alphaPentagon", 4);
+Class.abyssalAlphaPentagon = makeRare("alphaPentagon", 4);
 
 // HEXAGONS
 Class.hexagon = {
@@ -212,7 +212,7 @@ Class.shinyHexagon = makeRare("hexagon", 0);
 Class.legendaryHexagon = makeRare("hexagon", 1);
 Class.shadowHexagon = makeRare("hexagon", 2);
 Class.rainbowHexagon = makeRare("hexagon", 3);
-Class.transHexagon = makeRare("hexagon", 4);
+Class.abyssalHexagon = makeRare("hexagon", 4);
 
 // 3D POLYGONS
 Class.sphere = {
@@ -399,7 +399,7 @@ Class.tesseract = {
 
 // LABY
 let polyNames = [ "egg", "square", "triangle", "pentagon", "hexagon" ],
-    shinyNames = [ "", "shiny", "legendary", "shadow", "rainbow", "trans" ];
+    shinyNames = [ "", "shiny", "legendary", "shadow", "rainbow", "abyssal" ];
 for (let tier = 0; tier < 6; tier++) {
     for (let poly in polyNames) {
 

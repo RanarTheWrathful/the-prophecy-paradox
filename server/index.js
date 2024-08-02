@@ -1,6 +1,7 @@
-const path = require('path');
-const fs = require('fs');
 
+
+const fs = require('fs');
+const path = require('path');
 Error.stackTraceLimit = Infinity;
 let enviroment = require('./lib/dotenv.js')(fs.readFileSync(path.join(__dirname, '../.env')).toString());
 for (let key in enviroment) {
@@ -60,8 +61,8 @@ function collide(collision) {
     }
     if (
         (!instance.activation.check() && !other.activation.check()) ||
-        (instance.isArenaCloser && !instance.alpha) ||
-        (other.isArenaCloser && !other.alpha)
+        (instance.ignoreCollision && !instance.alpha) ||
+        (other.ignoreCollision && !other.alpha)
     ) return 0;
     switch (true) {
         case instance.type === "wall" || other.type === "wall":
@@ -70,7 +71,7 @@ function collide(collision) {
             if (instance.type === "satellite" || other.type === "satellite") return;
             let wall = instance.type === "wall" ? instance : other;
             let entity = instance.type === "wall" ? other : instance;
-            if (entity.isArenaCloser || entity.master.isArenaCloser) return;
+            if (entity.ignoreCollision || entity.master.ignoreCollision) return;
             switch (wall.shape) {
                 case 4:
                     mazewallcollide(wall, entity);
@@ -307,9 +308,6 @@ const maintainloop = () => {
     // upgrade existing ones
     for (let i = 0; i < bots.length; i++) {
         let o = bots[i];
-        if (o.skill.level < Config.LEVEL_CAP) {
-            o.skill.score += Config.BOT_XP;
-        }
         o.skill.maintain();
         o.skillUp([ "atk", "hlt", "spd", "str", "pen", "dam", "rld", "mob", "rgn", "shi" ][ran.chooseChance(...Config.BOT_SKILL_UPGRADE_CHANCES)]);
         if (o.leftoverUpgrades && o.upgrade(ran.irandomRange(0, o.upgrades.length))) {
@@ -328,15 +326,18 @@ const maintainloop = () => {
         } while (limit-- && dirtyCheck(loc, 50))
         let o = new Entity(loc);
         o.define(Config.SPAWN_CLASS);
-        o.define({ CONTROLLERS: ["nearestDifferentMaster"] });
+      setTimeout(() => {
+        if (o.isSmasher) o.define({ CONTROLLERS: ["mapTargetToGoal"] });
+       else o.define({ CONTROLLERS: ["minion"] });
+        }, 10000);
         o.refreshBodyAttributes();
-        o.skill.score = Config.BOT_START_XP;
+        o.skill.score = Math.random()*Config.BOT_XP;
         o.isBot = true;
         o.name = botName;
         o.invuln = true;
         o.nameColor = "#ffffff";
         o.leftoverUpgrades = ran.chooseChance(...Config.BOT_CLASS_UPGRADE_CHANCES);
-        let color = Config.RANDOM_COLORS ? Math.floor(Math.random() * 20) : team ? getTeamColor(team) : "darkGrey";
+        let color = Config.RANDOM_COLORS ? Math.floor(Math.random() * 20) : team ? getTeamColor(team) : "red";
         o.color.base = color;
         if (team) o.team = team;
         bots.push(o);

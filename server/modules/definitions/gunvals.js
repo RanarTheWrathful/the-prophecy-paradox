@@ -1,40 +1,12 @@
 module.exports = {
-//PROPHISIZED
-  bitmoreReload: { reload: 1.25, recoil: 1, shudder: 1, damage: 1, speed: 1, spray: 1 },
-  bitmoreRecoil: { reload: 1, recoil: 1.25, shudder: 1, damage: 1, speed: 1, spray: 1 },
-  bitmoreSudder: { reload: 1, recoil: 1, shudder: 1.25, damage: 1, speed: 1, spray: 1 },
-  bitmoreDamage: { reload: 1, recoil: 1, shudder: 1, damage: 1.25, speed: 1, spray: 1 },
-  bitmoreSpeed: { reload: 1, recoil: 1, shudder: 1, damage: 1, speed: 1.25, spray: 1 },
-  bitmoreSpray: { reload: 1, recoil: 1, shudder: 1, damage: 1, speed: 1, spray: 1.25 },
-  bitmoreStats: { reload: 1.25, recoil: 1.25, shudder: 1.25, damage: 1.25, speed: 1.25, spray: 1.25 },
-  greaterReload: { reload: 1.5, recoil: 1, shudder: 1, damage: 1, speed: 1, spray: 1 },
-  greaterRecoil: { reload: 1, recoil: 1.5, shudder: 1, damage: 1, speed: 1, spray: 1 },
-  greaterSudder: { reload: 1, recoil: 1, shudder: 1.5, damage: 1, speed: 1, spray: 1 },
-  greaterDamage: { reload: 1, recoil: 1, shudder: 1, damage: 1.5, speed: 1, spray: 1 },
-  greaterSpeed: { reload: 1, recoil: 1, shudder: 1, damage: 1, speed: 1.5, spray: 1 },
-  greaterSpray: { reload: 1, recoil: 1, shudder: 1, damage: 1, speed: 1, spray: 1.5 },
-  greaterStats: { reload: 1.5, recoil: 1.5, shudder: 1.5, damage: 1.5, speed: 1.5, spray: 1.5 },
-  doubleReload: { reload: 2, recoil: 1, shudder: 1, damage: 1, speed: 1, spray: 1 },
-  doubleRecoil: { reload: 1, recoil: 2, shudder: 1, damage: 1, speed: 1, spray: 1 },
-  doubleSudder: { reload: 1, recoil: 1, shudder: 2, damage: 1, speed: 1, spray: 1 },
-  doubleDamage: { reload: 1, recoil: 1, shudder: 1, damage: 2, speed: 1, spray: 1 },
-  doubleSpeed: { reload: 1, recoil: 1, shudder: 1, damage: 1, speed: 2, spray: 1 },
-  doubleSpray: { reload: 1, recoil: 1, shudder: 1, damage: 1, speed: 1, spray: 2 },
-  doubleStats: { reload: 0.5, recoil: 2, shudder: 2, damage: 2, speed: 2, spray: 2 },
-  superReload: { reload: 2.5, recoil: 1, shudder: 1, damage: 1, speed: 1, spray: 1 },
-  superRecoil: { reload: 1, recoil: 2.5, shudder: 1, damage: 1, speed: 1, spray: 1 },
-  superSudder: { reload: 1, recoil: 1, shudder: 2.5, damage: 1, speed: 1, spray: 1 },
-  superDamage: { reload: 1, recoil: 1, shudder: 1, damage: 2.5, speed: 1, spray: 1 },
-  superSpeed: { reload: 1, recoil: 1, shudder: 1, damage: 1, speed: 2.5, spray: 1 },
-  superSpray: { reload: 1, recoil: 1, shudder: 1, damage: 1, speed: 1, spray: 2.5 },
-  superStats: { reload: 2.5, recoil: 2.5, shudder: 2.5, damage: 2.5, speed: 2.5, spray: 2.5 },
-  //OTHER
+
 // Bases
     basic: { reload: 10.5, recoil: 1.4, shudder: 0.1, damage: 0.75, speed: 4.5, spray: 15 },
     drone: { reload: 36, recoil: 0.25, shudder: 0.1, size: 0.6, speed: 2, spray: 0.1 },
     trap: { reload: 23, shudder: 0.25, size: 0.6, damage: 0.75, speed: 5, spray: 15, resist: 3 },
     swarm: { reload: 23, recoil: 0.25, shudder: 0.05, size: 0.4, damage: 0.75, speed: 4, spray: 5 },
     factory: { reload: 48, shudder: 0.1, size: 0.7, damage: 0.75, speed: 3, spray: 0.1 },
+    babyFactory: { reload: 32, shudder: 0.1, size: 0.5, damage: 0.5, speed: 3.5, spray: 0.1 },
     productionist: { reload: 56, recoil: 0.25, shudder: 0.05, size: 0.7, damage: 0.75, speed: 4, range: 1.5, spray: 5 },
 
 // Spammers
@@ -101,7 +73,7 @@ module.exports = {
 // Heavy cannons
     pounder: { reload: 2, recoil: 1.6, damage: 2, speed: 0.85, maxSpeed: 0.8, density: 1.5, resist: 1.15 },
     destroyer: { reload: 2.2, recoil: 1.8, shudder: 0.5, health: 2, damage: 2, pen: 1.2, speed: 0.65, maxSpeed: 0.5, density: 2, resist: 3 },
-    annihilator: { reload: 0.8, recoil: 1.25 },
+    annihilator: { reload: 1.1, recoil: 1.25 },
     hive: { reload: 1.5, recoil: 0.8, size: 0.8, health: 0.7, damage: 0.3, maxSpeed: 0.6 },
     artillery: { reload: 1.2, recoil: 0.7, size: 0.9, speed: 1.15, maxSpeed: 1.1, density: 1.5 },
     mortar: { reload: 1.2, health: 1.1, speed: 0.8, maxSpeed: 0.8 },
@@ -137,5 +109,5 @@ module.exports = {
     lowPower: { shudder: 2, health: 0.5, damage: 0.5, pen: 0.7, spray: 0.5, resist: 0.7 },
     halfrange: { range: 0.5 },
     aura: { reload: 0.001, recoil: 0.001, shudder: 0.001, size: 6, speed: 0.001, maxSpeed: 0.001, spray: 0.001 },
-    noSpread: { shudder: 0, spray: 0 }
+    noSpread: { shudder: 0, spray: 0 },
 }

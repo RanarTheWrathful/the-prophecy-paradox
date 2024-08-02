@@ -1,5 +1,5 @@
-const { combineStats, makeAuto, weaponArray } = require('../facilitators.js');
-const { smshskl, base } = require('../constants.js');
+const { combineStats, makeAuto, weaponArray, makeRare } = require('../facilitators.js');
+const { smshskl, base, basePolygonDamage, basePolygonHealth} = require('../constants.js');
 const g = require('../gunvals.js');
 const dreadnoughtBody = {
     SPEED: base.SPEED * 0.5,
@@ -35,6 +35,108 @@ g.dreadv1Trap = {
 	reload: 3,
 	health: 1.75,
 }
+//FOOOOOOOOOD!
+// Hexagons
+Class.oldHexagon = {
+    PARENT: "food",
+    LABEL: "Hexagon",
+    VALUE: 30e3,
+    SHAPE: 6,
+    SIZE: 60,
+    COLOR: 15,
+    BODY: {
+        DAMAGE: 2 * basePolygonDamage,
+        DENSITY: 80,
+        HEALTH: 600 * basePolygonHealth,
+        RESIST: Math.pow(1.25, 3),
+        PENETRATION: 1.1,
+        SHIELD: 50 * basePolygonHealth,
+        ACCELERATION: 0.0025
+    },
+    DRAW_HEALTH: true,
+    GIVE_KILL_MESSAGE: true,
+};
+Class.shinyOldHexagon = makeRare("oldHexagon", 0);
+Class.legendaryHexagon = makeRare("oldHexagon", 1);
+Class.shadowHexagon = makeRare("oldHexagon", 2);
+Class.rainbowHexagon = makeRare("oldHexagon", 3);
+Class.abyssalHexagon = makeRare("oldHexagon", 4);
+
+//Septagons
+Class.septagon = {
+    PARENT: "food",
+    LABEL: "Septagon",
+    VALUE: 75e3,
+    SHAPE: 7,
+    SIZE: 70,
+    COLOR: 11,
+    BODY: {
+        DAMAGE: 2 * basePolygonDamage,
+        DENSITY: 100,
+        HEALTH: 1000 * basePolygonHealth,
+        RESIST: Math.pow(1.25, 3),
+        PENETRATION: 1.1,
+        SHIELD: 75 * basePolygonHealth,
+        ACCELERATION: 0.0025
+    },
+    DRAW_HEALTH: true,
+    GIVE_KILL_MESSAGE: true,
+};
+Class.shinySeptagon = makeRare("septagon", 0);
+Class.legendarySeptagon = makeRare("septagon", 1);
+Class.shadowSeptagon = makeRare("septagon", 2);
+Class.rainbowSeptagon = makeRare("septagon", 3);
+Class.abyssalSeptagon = makeRare("septagon", 4);
+//Octagons
+Class.octagon = {
+    PARENT: "food",
+    LABEL: "Octagon",
+    VALUE: 5e5,
+    SHAPE: 8,
+    SIZE: 80,
+    COLOR: 34,
+    BODY: {
+        DAMAGE: 2 * basePolygonDamage,
+        DENSITY: 100,
+        HEALTH: 2500 * basePolygonHealth,
+        RESIST: Math.pow(1.25, 3),
+        PENETRATION: 1.1,
+        SHIELD: 100 * basePolygonHealth,
+        ACCELERATION: 0.0025
+    },
+    DRAW_HEALTH: true,
+    GIVE_KILL_MESSAGE: true,
+};
+Class.shinyOctagon = makeRare("octagon", 0);
+Class.legendaryOctagon = makeRare("octagon", 1);
+Class.shadowOctagon = makeRare("octagon", 2);
+Class.rainbowOctagon = makeRare("octagon", 3);
+Class.abyssalOctagon = makeRare("octagon", 4);
+//Nonagons
+Class.nonagon = {
+    PARENT: "food",
+    LABEL: "Nonagon",
+    VALUE: 15e5,
+    SHAPE: 6,
+    SIZE: 100,
+    COLOR: 11,
+    BODY: {
+        DAMAGE: 2 * basePolygonDamage,
+        DENSITY: 150,
+        HEALTH: 1e4 * basePolygonHealth,
+        RESIST: Math.pow(1.25, 3),
+        PENETRATION: 1.1,
+        SHIELD: 159 * basePolygonHealth,
+        ACCELERATION: 0.0025
+    },
+    DRAW_HEALTH: true,
+    GIVE_KILL_MESSAGE: true,
+};
+Class.shinyNonagon = makeRare("nonagon", 0);
+Class.legendaryNonagon = makeRare("nonagon", 1);
+Class.shadowNonagon = makeRare("nonagon", 2);
+Class.rainbowNonagon = makeRare("nonagon", 3);
+Class.abyssalNonagon = makeRare("nonagon", 4);
 
 // Comment out the line below to enable this addon, uncomment it to disable this addon.
 // return console.log('--- Dreadnoughts v1 addon [dreadv1.js] is disabled. See lines 32-33 to enable it. ---');

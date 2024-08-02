@@ -3283,7 +3283,7 @@ Class.megaSmasher = {
     PARENT: "genericSmasher",
     LABEL: "Mega-Smasher",
     BODY: {
-        SPEED: 1.05 * base.SPEED,
+        SPEED: 1.25 * base.SPEED,
         FOV: 1.1 * base.FOV,
         DENSITY: 4 * base.DENSITY,
     },
@@ -3299,7 +3299,7 @@ Class.spike = {
     LABEL: "Spike",
     BODY: {
         SPEED: base.SPEED * 0.9,
-        DAMAGE: base.DAMAGE * 1.1,
+        DAMAGE: base.DAMAGE * 1.25,
     },
     TURRETS: [
         {
@@ -3611,7 +3611,7 @@ Class.autoSmasher = makeAuto({
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"]
     Class.basic.UPGRADES_TIER_2 = ["smasher"]
-        Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine", "cocci"]
+        Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine", /*"cocci"*/]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
 
     Class.twin.UPGRADES_TIER_2 = ["doubleTwin", "tripleShot", "gunner", "hexaTank", "helix"]
@@ -3657,6 +3657,6 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
 
     Class.desmos.UPGRADES_TIER_2 = ["helix", "sidewinder", "undertow", "repeater"]
         Class.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex", "coil", "duplicator"]
-        Class.sidewinder.UPGRADES_TIER_3 = ["coil", "python", "ranch", "oroboros", "cocci"]
+        Class.sidewinder.UPGRADES_TIER_3 = ["coil", /*"python",*/ "ranch", "oroboros", /*"cocci"*/]
         Class.undertow.UPGRADES_TIER_3 = ["riptide"]
         Class.repeater.UPGRADES_TIER_3 = ["iterator", "duplicator"]
