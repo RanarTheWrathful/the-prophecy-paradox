@@ -371,6 +371,28 @@ Class.swarmTurret = makeTurret({
         },
     ],
 }, {canRepel: true, limitFov: true, extraStats: []})
+
+Class.crasherSpawner = makeTurret({
+    MAX_CHILDREN: 4,
+    GUNS: [
+        {
+            POSITION: [6, 12, 1.2, 8, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone, g.weak, g.weak, {health: 1.1}]),
+                TYPE: [
+                    "drone",
+                    {
+                        LABEL: "Crasher",
+                        DRAW_HEALTH: true,
+                    },
+                ],
+                SYNCS_SKILLS: true,
+                AUTOFIRE: true,
+                STAT_CALCULATOR: "drone",
+            },
+        },
+    ],
+}, {independent: true, aiSettings: {chase: true}, label: 'Spawned', color: 'pink'})
 Class.genghisLowerTurret = makeTurret({
     MAX_CHILDREN: 4,
     GUNS: [
@@ -408,37 +430,27 @@ Class.napoleonLowerTurret = makeTurret({
         },
     ],
 }, {canRepel: true, limitFov: true, extraStats: []})
-Class.gunnerCruiserTurret = makeTurret({
+Class.crasherSpawner = makeTurret({
+    MAX_CHILDREN: 4,
     GUNS: [
         {
-            POSITION: [4, 7.5, 0.6, 6, 4.5, 0, 0],
+            POSITION: [6, 12, 1.2, 8, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm]),
-                TYPE: "swarm",
-                STAT_CALCULATOR: "swarm",
-            },
-        }, {
-            POSITION: [4, 7.5, 0.6, 6, -4.5, 0, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm]),
-                TYPE: "swarm",
-                STAT_CALCULATOR: "swarm",
-            },
-        }, {
-            POSITION: [16, 3, 1, 0, -3, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin]),
-                TYPE: "bullet",
-            },
-        }, {
-            POSITION: [16, 3, 1, 0, 3, 0, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin]),
-                TYPE: "bullet",
+                SHOOT_SETTINGS: combineStats([g.drone, g.weak, g.weak, {health: 1.1}]),
+                TYPE: [
+                    "drone",
+                    {
+                        LABEL: "Crasher",
+                        DRAW_HEALTH: true,
+                    },
+                ],
+                SYNCS_SKILLS: true,
+                AUTOFIRE: true,
+                STAT_CALCULATOR: "drone",
             },
         },
     ],
-}, {canRepel: true, limitFov: true, independent: true, fov: 10, extraStats: []})
+}, {independent: true, aiSettings: {chase: true}, label: 'Spawned', color: 'pink'})
 Class.juliusLowerTurret = makeTurret({
     MAX_CHILDREN: 3,
     GUNS: [
