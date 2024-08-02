@@ -4,7 +4,8 @@ module.exports = {
     // Game server domain.
     // If the host is 'localhost:NUMBER', the NUMBER must be the port setting.
     //host: "the-prophecy-paradox.glitch.me",
-    host: "upcoming-update-tpp.glitch.me",
+   // host: "upcoming-update-tpp.glitch.me",
+    host: "lake-chocolate-month.glitch.me",
 
     // Which port to run the web server on.
     port: 8080,
@@ -162,7 +163,7 @@ module.exports = {
     ENEMY_SPAWN_COOLDOWN_NEST: 60, // Cooldown (in game ticks) of nest enemies spawn attempts being made.
 
     // Cooldown (in seconds) of boss spawns being announced.
-    BOSS_SPAWN_COOLDOWN: 60,
+    BOSS_SPAWN_COOLDOWN: Infinity,
     // The delay (in seconds) between the boss spawns being announced and the bosses actually spawning.
     // NOTE: The spawn message (ex. "A strange trembling...") takes half as long to appear than the boss.
     BOSS_SPAWN_DURATION: 5,
