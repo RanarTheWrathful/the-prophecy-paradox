@@ -576,8 +576,8 @@ a.link {
 
 .server {
     background: #000000;
-    border-bottom: 2px solid #d200000;
-    box-shadow: inset 0 -2px #d24a01;
+    border-bottom: 2px solid #00000f;
+    box-shadow: inset 0 -2px #0000ff;
     -webkit-box-shadow: inset 0 -2px #d24a01;
 }
 .server:active,
@@ -654,7 +654,7 @@ a.link {
     top: 0px;
     margin: 0 auto;
     position: relative;
-    overflow: hidden;
+   /* overflow: hidden;*/
     z-index: 2;
 }
 
@@ -854,6 +854,7 @@ i.flag.down::before {
     height: 100vh; /* 100% of the viewport height */
     overflow-x: auto; /* Enable horizontal scrolling */
     overflow-y: auto; /* Enable vertical scrolling */
-    box-sizing: border-box; /* Includes padding and border in width/height */
+   box-sizing: border-box; 
+ /* Includes padding and border in width/height */ 
 }
 

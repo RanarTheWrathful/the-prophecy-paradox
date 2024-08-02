@@ -999,6 +999,248 @@ Class.impaler = {
         },
     ],
 }
+//cruiser branch
+Class.aggressor = {
+  PARENT: ["genericTank"],
+  LABEL: "Aggressor",
+  DANGER: 7,
+  FACING_TYPE: "locksFacing",
+  STAT_NAMES: statnames.swarm,
+    BODY: {
+        FOV: 1.2 * base.FOV,
+    },
+  GUNS: [
+        {
+            POSITION: [14, 3, 1, 0, -6, -7, 0.25],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm, g.bee]),
+                TYPE: ["bee", { INDEPENDENT: true }],
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: "drone",
+                WAIT_TO_CYCLE: true,
+                LABEL: "Secondary",
+            },
+        },
+        {
+            POSITION: [14, 3, 1, 0, 6, 7, 0.75],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm, g.bee]),
+                TYPE: ["bee", { INDEPENDENT: true }],
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: "drone",
+                WAIT_TO_CYCLE: true,
+                LABEL: "Secondary",
+            },
+        },
+  {
+    /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+    POSITION: [7, 7.5, 0.6, 7, 4, 0, 0],
+    PROPERTIES: {
+      SHOOT_SETTINGS: combineStats([
+        g.swarm,
+        g.halfDamage,
+      ]), 
+      TYPE: "swarm",
+      STAT_CALCULATOR: statnames.swarm,
+    },
+  },
+  {
+    POSITION: [7, 7.5, 0.6, 7, -4, 0, 0.5],
+    PROPERTIES: {
+      SHOOT_SETTINGS: combineStats([
+        g.swarm,
+        g.halfDamage,
+      ]), 
+      TYPE: "swarm",
+      STAT_CALCULATOR: statnames.swarm,
+    },
+  }
+  ],
+}
+Class.assaulter = {
+    PARENT: "genericTank",
+    LABEL: "Assaulter",
+    DANGER: 7,
+    STAT_NAMES: statnames.mixed,
+    BODY: {
+        FOV: 1.25 * base.FOV,
+    },
+    GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [7.5, 5.5, 0.6, 5, 7, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.swarm]),
+        TYPE: "swarm",
+        STAT_CALCULATOR: statnames.swarm,
+      },
+    },
+    {
+      POSITION: [7.5, 5.5, 0.6, 5, -7, 0, 0.5],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.swarm]),
+        TYPE: "swarm",
+        STAT_CALCULATOR: statnames.swarm,
+      },
+    },
+        {
+            POSITION: [19, 2, 1, 0, -2.5, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin, { recoil: 4 }, { recoil: 1.8 }]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [19, 2, 1, 0, 2.5, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin, { recoil: 4 }, { recoil: 1.8 }]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [12, 11, 1, 0, 0, 0, 0],
+        },
+      ]
+  }
+//TWIN BRANCH
+Class.destablizer = {
+    PARENT: "genericTank",
+    LABEL: "Destablizer",
+    GUNS: [
+        {
+            POSITION: [14, 3, 4, -3, 5, 0, 0.6],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.machineGunner]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [14, 3, 4, -3, -5, 0, 0.8],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.machineGunner]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: {
+                LENGTH: 20,
+                WIDTH: 8,
+                Y: 5.5
+            },
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: {
+                LENGTH: 20,
+                WIDTH: 8,
+                Y: -5.5,
+                DELAY: 0.5
+            },
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [14, 3, 4, 3, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.machineGunner]),
+                TYPE: "bullet",
+            },
+        },
+    ]
+}
+//Work in progress...
+Class.smashersphere = {
+    PARENT: "genericSmasher",
+    LABEL: "Smashersphere",
+    DANGER: 6,
+    TURRETS: [
+        {
+            POSITION: [21.5, 0, 0, 0, 360, 0],
+            TYPE: "smasherBody"
+        },
+        {
+            POSITION: [14, 0, 0, 0, 0, 1],
+            TYPE: "auraSmasherGen"
+        }
+    ]
+}
+//waiting to be adopted...
+Class.wilder = {
+    PARENT: "genericTank",
+    LABEL: "Wilder",
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [14, 3, 4, 0, 2.5, 0, 0.4],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.machineGunner]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [14, 3, 4, 0, -2.5, 0, 0.2],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.machineGunner]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: {
+                LENGTH: 18,
+                WIDTH: 8,
+                ASPECT: 1,
+                X: 0,
+                Y: 0,
+                ANGLE: 0,
+                DELAY: 0
+            },
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: "bullet",
+            }
+        }
+    ]
+}
+Class.buzzer = {
+  PARENT: ["genericTank"],
+  LABEL: "Buzzer",
+  DANGER: 7,
+  FACING_TYPE: "locksFacing",
+  STAT_NAMES: statnames.swarm,
+    BODY: {
+        FOV: 1.2 * base.FOV,
+    },
+  GUNS: [
+        {
+            POSITION: [14, 3, 1, 0, -6, -7, 0.25],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm, g.bee]),
+                TYPE: ["bee", { INDEPENDENT: true }],
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: "drone",
+                WAIT_TO_CYCLE: true,
+                LABEL: "Secondary",
+            },
+        },
+        {
+            POSITION: [14, 3, 1, 0, 6, 7, 0.75],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm, g.bee]),
+                TYPE: ["bee", { INDEPENDENT: true }],
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: "drone",
+                WAIT_TO_CYCLE: true,
+                LABEL: "Secondary",
+            },
+        },
+  ],
+};
+
 //Legendary Classes
 
 Class.interloper = {
@@ -1370,7 +1612,7 @@ Class.experimenter.UPGRADES_TIER_2 = [
   "physicist",
   ]
 Class.trapper.UPGRADES_TIER_2.push("flinger")
-Class.flinger.UPGRADES_TIER_2 = ["slinger", "autoFlinger"]
+Class.flinger.UPGRADES_TIER_3 = ["slinger", "autoFlinger"]
 Class.pounder.UPGRADES_TIER_2.push("star")
 Class.flankGuard.UPGRADES_TIER_2.push("star", "autoFlankGuard")
 Class.star.UPGRADES_TIER_3 = ["deathStar", "autoStar", "neutronStar", "pulsar", "mega3"]
@@ -1378,8 +1620,12 @@ Class.autoFlankGuard.UPGRADES_TIER_3 = ["fullAuto", "autoStar", "autoTrapGuard",
 Class.destroyer.UPGRADES_TIER_3.push("neutronStar", "retaliator")
 Class.hexaTank.UPGRADES_TIER_3.push("deathStar", "autoHexaTank")
 Class.trapGuard.UPGRADES_TIER_3.push("autoTrapGuard")
+Class.cruiser.UPGRADES_TIER_3.push("aggressor", "assaulter")
+Class.gunner.UPGRADES_TIER_3.push("assaulter")
+Class.twin.UPGRADES_TIER_3.push("destablizer")
+
 Class.auto3.UPGRADES_TIER_3.push("fullAuto")
 Class.hunter.UPGRADES_TIER_3.push("pulsar")
 Class.smasher.UPGRADES_TIER_3.push("poltergeist", /*"smashersphere",*/ "collider", "bouncer", "banger", "bodyGuard", "impaler")
 Class.Ranardeveloper.UPGRADES_TIER_0 = ["developer", "RanarsTanks"]
-Class.RanarsTanks.UPGRADES_TIER_0 = ["experimenter", "interloper", "rebel", /*"necroTyrant"*/]
+Class.RanarsTanks.UPGRADES_TIER_0 = ["experimenter", "interloper", "rebel", "necroTyrant", "buzzer", "smashersphere", "wilder"]
